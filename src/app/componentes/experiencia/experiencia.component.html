@@ -1,0 +1,74 @@
+<div id="prueba10" class="experiencia container ">    <!-- --------EXPERIENCIA ---------- -->
+  
+  <div class="row">
+        <div class="col" ><h2>Experiencia</h2></div>
+        <div class="col col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="#" (click)="enviarExp()"><i class="fa-solid fa-plus"></i></a></div>
+         
+        <ul class="items-list">
+            <!-- ----------comienza ngFor ----------------------- -->
+          <li *ngFor="let experiencia of experienciaList" >
+              <div   class="experiencia-item row">   
+                 <div  class="exp col">
+                   <div class="logo-exp col-lg-2 col-xl-2">
+                    <img class="img-fluid" src="../assets/imagenes/Freelancer.png" alt="">
+                   </div >
+                    <div class="exp-detalles" >
+                      <div id={{experiencia.id}} class="" >
+                        <div  *ngIf="experiencia.id +1000 !=inputId+1000"   class="">
+                          <h3>{{experiencia.position}} - {{experiencia.tipoEmpleo}}</h3>
+                      <p>{{experiencia.company}} - {{experiencia.tipoJornada}}</p>
+                      <h5>{{experiencia.start}} - {{experiencia.end}}</h5>
+                      <h5>{{experiencia.city}}</h5>  
+                        </div>
+                        <div *ngIf="experiencia.id +1000 ==inputId+1000" class="">
+
+                          <form [formGroup]="formLogin"  (submit)="editarExp(experiencia.id)" >
+                          
+                            Empresa: <input type="text" id="company"   formControlName="company" placeholder={{experiencia.company}}><br>
+                            Puesto <input type="text" id="position" formControlName="position" placeholder={{experiencia.position}}><br>
+                            Comienzo: <input type="text" id="start" formControlName="start" placeholder={{experiencia.start}}><br>
+                            Fin: <input type="text" id="end"   formControlName="end" placeholder={{experiencia.end}}><br>
+                            URL Imagen: <input type="text" id="img"   formControlName="img" placeholder={{experiencia.img}}><br>
+                            Ciudad: <input type="text" id="city" formControlName="city" placeholder={{experiencia.city}}><br>
+                            Tipo de Empleo: <input type="text" id="tipoEmpleo"   formControlName="tipoEmpleo" placeholder={{experiencia.tipoEmpleo}}><br>
+                            Tipo de Jornada: <input type="text" id="tipoJornada" formControlName="tipoJornada" placeholder={{experiencia.tipoJornada}}><br>
+                          
+                          <div>                           
+                            <button  type="button" (click)="editarExp(experiencia.id)" >Enviar</button>                          
+                            <button  type="button" (click)="cancelar(experiencia.id)">cancelar</button>
+                          </div>
+                        </form>
+                        </div>
+                        </div>         
+                   </div>                 
+                  </div>
+                  <div class="editar-exp col col-sm-1 col-md-1 col-lg-1 col-xl-1">
+                    <a type="button" (click)="ponerid(experiencia.id); mostrar(experiencia.id)" ><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a type="button" (click)="borrarExp(experiencia.id)" data-bs-target="#staticBackdrop" data-bs-toggle="modal" ><i class="fa-solid fa-trash"></i></a>
+                  </div>
+                            <!-- --------modal eliminar------------ -->
+                          
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmación</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                 </div>
+                                   <div class="modal-body">
+                                            Elemento eliminado con éxito
+                                     </div>
+                              <div class="modal-footer">
+                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+          
+          </div>
+        </li>
+                         <!-- -------------------termina ngFor-------------------- -->
+      </ul>
+   </div>
+</div>

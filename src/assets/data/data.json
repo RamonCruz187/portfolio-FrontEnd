@@ -1,0 +1,72 @@
+{
+    "name":"Ramón Cruz",
+    "backImage": "https://cdn.pixabay.com/photo/2016/03/27/18/54/technology-1283624_1280.jpg",
+    "image":"https://cdn.pixabay.com/photo/2020/02/18/16/32/man-4860003_1280.jpg",
+    "position":"Desarrollador Web FullStack Junior",
+    "company":{
+        "name": "Argentina Programa",
+        "image":"",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb123eKXJBZ06hyiP3t0oChw9ulLNnK2kcTOPGMQ7P&s"
+    },
+    "school":{
+        "name": "UNPSJB",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb123eKXJBZ06hyiP3t0oChw9ulLNnK2kcTOPGMQ7P&s",
+        "url": ""
+    },
+    "ubication":"Comodoro Rivadavia(Chubut)",
+    "about":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsa commodi nulla delectus voluptas inventore quo quae vero voluptatem excepturi, magni voluptate odit capo",
+    "experience":[{
+        "position":"Desarrollador WEB FullStack",
+        "company":"Freelancer",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb123eKXJBZ06hyiP3t0oChw9ulLNnK2kcTOPGMQ7P&s",
+        "mode":"Jornada Parcial",
+        "start":"2008",
+        "end":"2010",
+        "city":"Com. Riv."
+    },
+    {
+        "position":"Desarrollador WEB FullStack 2",
+        "company":"Freelancer 2",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb123eKXJBZ06hyiP3t0oChw9ulLNnK2kcTOPGMQ7P&s",
+        "mode":"Jornada Parcial",
+        "start":"2010",
+        "end":"2012",
+        "city":"Com. Riv. 2"
+    }],
+    "educacion":[{
+        "school":"Escuela de prueba",
+        "title":"titulo de prueba",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb123eKXJBZ06hyiP3t0oChw9ulLNnK2kcTOPGMQ7P&s",
+        "carrer":"carrera de prueba",
+        "start":"2010",
+        "end":"2015"
+    },
+    {
+        "school":"Escuela de prueba2",
+        "title":"titulo de prueba2",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb123eKXJBZ06hyiP3t0oChw9ulLNnK2kcTOPGMQ7P&s",
+        "carrer":"carrera de prueba2",
+        "start":"2015",
+        "end":"2020"
+    },
+    {
+        "school":"universidad",
+        "title":"tecnico",
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb123eKXJBZ06hyiP3t0oChw9ulLNnK2kcTOPGMQ7P&s",
+        "carrer":"tecnico",
+        "start":"2020",
+        "end":"2022"
+    }],
+    "aptitudes":[{
+        "name":"HTML",
+        "progress":"40"
+    },
+    {
+        "name":"CSS",
+        "progress":"80"
+    }]
+
+}
+
+
+

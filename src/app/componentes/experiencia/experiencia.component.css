@@ -1,0 +1,10 @@
+.esconder{
+    visibility: hidden;
+}
+.ocultar{
+    visibility: hidden
+}
+.prueba2{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}

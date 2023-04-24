@@ -1,1 +1,231 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+.barra{
+    background-color: black;
+    display:inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    
+}
+
+.yo-programo{
+    display: inline-flex;
+    flex-direction: row;
+    color: antiquewhite;
+    
+}
+
+.yo-programo img{
+    height: 50px;
+    padding-top: 5px;
+    
+}
+
+.yo-programo h3{
+    margin-left: 20px;
+    display: inherit;
+    align-items: end;
+    
+}
+
+#iconos{
+    display: inherit;
+    justify-content: flex-end;
+}
+
+#iconos i{
+    display: inherit;
+    margin: 10px;
+    margin-top: 20px;
+    align-items: end;
+    color: white;
+}
+
+
+#header{
+    height: 40vw;
+    min-height: 100px;
+    max-height: 350px;
+    background-image: url("./assets/imagenes/code.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px 20px 0px 0px;
+   
+}
+
+#edit{
+    color:whitesmoke;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.datos{
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius:0px 0px 20px 20px;
+}
+
+#img-contenedor{
+margin-top: -200px;
+display: flex;
+align-items: flex-end;
+
+}
+
+#foto{
+    border-radius: 100px;
+
+}
+
+.editar-foto{
+    margin-bottom: 30px;
+}
+.datos2 {
+   justify-content: end;
+   margin: 0;
+}
+
+.acerca-de{
+    margin-top: 5px;
+    border: 1px solid grey;
+    border-radius:20px;
+    padding: 25px;
+
+}
+
+.acerca-de i {
+    display: flex;
+    justify-content: end;
+    padding-top: 20px;
+}
+
+.experiencia{
+    margin-top: 5px;
+    border: 1px solid grey;
+    border-radius:20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.experiencia-item{
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.exp-detalles{
+    padding-left: 30px;
+}
+
+.exp{
+    display: inherit;
+}
+
+.logo-exp img{
+    height: 75%;
+}
+
+.educacion{
+    margin-top: 5px;
+    border: 1px solid grey;
+    border-radius:20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.educacion-item{
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.skills{
+    margin-top: 5px;
+    border: 1px solid grey;
+    border-radius:20px;
+    padding: 25px;
+    
+}
+
+.skills-row{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.skill-barra{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit{
+    display: inherit;
+    justify-content: center;
+}
+
+.edit i{
+    padding: 5px;
+    padding-bottom: 20px;
+}
+
+.proyectos{
+    margin-top: 5px;
+    border: 1px solid grey;
+    border-radius:20px;
+    padding: 25px;
+}
+
+.proyectos-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proyectos-item h3{
+    color: rgb(16, 16, 145);
+}
+
+.title{
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.modificar {
+    display: inherit;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* -----------------estilos js----------- */
+

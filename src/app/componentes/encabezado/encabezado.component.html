@@ -1,0 +1,51 @@
+<div class="container-fluid  row barra">   <!-- ------BARRA---------- -->
+    <div class="col yo-programo">
+        <img src="../assets/imagenes/arg-prog.png" alt="">
+        <h3>#Yo programo</h3>
+    </div>
+
+    <div class="col" id="iconos">
+        <a href="#"><i class="fa-brands fa-facebook fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+        <button type="button" class="btn btn-primary" style="margin-left: 20px;">Login</button>
+    </div>
+</div>
+
+<header class="container">   <!-- --------ENCABEZADO --------- -->
+    <div id="header" class="row">  <!--  ----BOTON EDITAR IMAGEN DE FONDO------ -->
+        <div class="col">
+            <a href="#"><i id="edit" class="fa-solid fa-user-pen fa-xl"></i></a>
+        </div>
+    </div>
+    <div class=" row datos ">
+        <div class="col datos1 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+                    <!-- ------IMAGEN DE PERFIL------------ -->
+            <div class=" col-sm-4 col-md-4 col-lg-4 col-xl-4 py-3" id="img-contenedor">
+                <img [src]="miPorfolio.image" class="img-fluid" id="foto" alt="logo">
+                <a href="#"><i class="fa-solid fa-user-pen fa-xl editar-foto"></i></a>
+            </div>
+                        <!-- ------INFORMACION PERSONAL------ -->
+
+            <h2><strong>{{miPorfolio.name}}</strong></h2>
+            <div class="row">
+                <p class="col" >{{miPorfolio.position}}</p>  
+                <a  class="col"><i class="fa-solid fa-user-pen editar-foto"></i></a>
+            </div>
+            <div class="row">
+                <p class="col">{{miPorfolio.ubication}}<a href="#">Inf. de contacto</a> </p> 
+                <a href="#" class="col"><i class="fa-solid fa-user-pen editar-foto"></i></a>   
+            </div>
+
+            <button type="button" class="btn btn-primary">Tengo Interes en</button>
+            <button type="button" class="btn btn-light" >Añadir Sección</button>
+            <button type="button" class="btn btn-light" >Más</button>
+      
+        </div>
+                    <!-- ------LOGO ARGENTINA PROGRAMA -->
+        <div class="col datos2 col-sm-12 col-md-3 col-lg-3 col-xl-3 align-self-center ">
+            <img class="align-self-end img-fluid" src="../assets/imagenes/arg-programa.png" alt="">
+        </div>
+    </div>
+</header>
