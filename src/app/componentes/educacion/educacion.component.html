@@ -1,26 +1,110 @@
 <div class="educacion container ">   <!-- ---------EDUCACION ------------- -->
     <div class="row">
         <div class="col"><h2>Educación</h2></div>
-        <div class="col col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="#"><i class="fa-solid fa-plus"></i></a></div>
+        <div class="col col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="#" data-bs-toggle="modal" data-bs-target="#agregarEducacion"><i class="fa-solid fa-plus"></i></a></div>
+        
+        <!----------- modal Agregar Experiencia----------------- -->           
+        <div class="modal fade" id="agregarEducacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Agregar Educación </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="formEducacion"   >
+                          
+                    Institución: <input type="text"    formControlName="school" ><br>
+                    Título: <input type="text" formControlName="title" ><br>
+                    Comienzo: <input type="date"  formControlName="start" ><br>
+                    Fin: <input type="date"    formControlName="end" ><br>
+                    URL Imagen: <input type="text"    formControlName="img" ><br>
+                    Carrera: <input type="text"  formControlName="carrer" ><br>
+                    Estado: <select name=""    formControlName="estadoEducacion">
+                                        <option value="Finalizado">Finalizado</option>
+                                        <option value="En curso">En curso</option>
+                                        <option value="No termianado">No termianado</option>
+                                     </select> <br>
+                    
+                  </form>
+               </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="enviarEdu()">Enviar</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>          
+               </div>
+              </div>
+            </div>
+          </div>
+                  <!---------Fin modal Agregar Experiencia----------------- -->
+        
+                 <!-- ----------comienza ngFor ----------------------- -->
         <ul class="items-list">
             <li *ngFor="let educacion of educacionList" >
              <div class="educacion-item row">
                 <div class="exp col">
-                 <div class="logo-exp col-lg-2 col-xl-2">
-                    <img class="img-fluid" [src]="educacion.img" alt="">
-                 </div>
-                 <div class="exp-detalles">
-                    <h3>{{educacion.school}}</h3>
-                    <p>{{educacion.carrer}}</p>
-                    <h5><time>{{educacion.start}}</time> - <time>{{educacion.end}}</time></h5>
-                 </div>
+                    <div class="logo-exp col-lg-2 col-xl-2">
+                        <img class="img-fluid" src="../assets/imagenes/Freelancer.png" alt="">
+                       </div >
+                       <div class="exp-detalles" >
+                        <div id={{educacion.id}} class="" >
+                          <div  *ngIf="educacion.id +1000 !=inputId+1000"   class="">
+                            <h3>{{educacion.school}} - {{educacion.title}}</h3>
+                            <p>{{educacion.carrer}} - {{educacion.estadoEducacion}}</p>
+                            <h5>{{educacion.start}} - {{educacion.end}}</h5>
+                            
+                          </div>
+                          <div *ngIf="educacion.id +1000 ==inputId+1000" class="">
+                            <form [formGroup]="formEducacion"  (submit)="editarEdu(educacion.id)" >
+                            
+                                Institución: <input type="text"    formControlName="school" placeholder={{educacion.school}}><br>
+                                Título: <input type="text" formControlName="title" placeholder={{educacion.title}}><br>
+                                Comienzo: <input type="date"  formControlName="start" placeholder={{educacion.start}}><br>
+                                Fin: <input type="date"    formControlName="end" placeholder={{educacion.end}}><br>
+                                URL Imagen: <input type="text"    formControlName="img" placeholder={{educacion.img}}><br>
+                                Carrera: <input type="text"  formControlName="carrer" placeholder={{educacion.carrer}}><br>
+                                Estado: <select name=""    formControlName="estadoEducacion">
+                                                    <option value="Finalizado">Finalizado</option>
+                                                    <option value="En curso">En curso</option>
+                                                    <option value="No termianado">No termianado</option>
+                                                 </select> <br>
+                            
+                              <div>                           
+                                <button  type="button" class="btn btn-success" (click)="editarEdu(educacion.id)" >Enviar</button>                          
+                                <button  type="button" class="btn btn-primary" (click)="cancelar(educacion.id)">cancelar</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>         
+                     </div>
                 </div>
+                
+                
                 <div class="editar-exp col col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                    <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="#"><i class="fa-solid fa-trash"></i></a>
+                    <a type="button" (click)="ponerid(educacion.id); mostrar(educacion.id)" ><i class="fa-solid fa-pen-to-square"></i></a>
+                <a type="button" (click)="borrarEdu(educacion.id)" data-bs-target="#modalBorrarEdu" data-bs-toggle="modal" ><i class="fa-solid fa-trash"></i></a>
                 </div>
+                                <!-- --------modal eliminar------------ --> 
+                <div class="modal fade" id="modalBorrarEdu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                               <h1 class="modal-title fs-5" id="staticBackdropLabelEdu">Confirmación</h1>
+                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="recargar()"></button>
+                            </div>
+                            <div class="modal-body">
+                              Elemento eliminado con éxito
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="recargar()">Cerrar</button>                         
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
              </div>  
           </li>
         </ul>
+    
+    
     </div>
 </div>

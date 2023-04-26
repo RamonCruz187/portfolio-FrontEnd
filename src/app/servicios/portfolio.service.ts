@@ -17,25 +17,32 @@ obtenerDatos():Observable<any>{
  
 }
 
-nuevaExperiencia(url:string, body:any):Observable<any>{
-  /* console.log("elservicio funciona"); */
-   return this.http.post(url, body);
-   
+      /* ------EXPERIENCIA */
+  nuevaExperiencia(url:string, body:any):Observable<any>{
+    return this.http.post(url, body);
   }
 
   borrarExperiencia(url:string, body:any):Observable<any>{
-    /* console.log("elservicio funciona"); */
-     return this.http.delete(url, body);
-     
+    return this.http.delete(url, body);
     }
 
-    editarExperiencia(url:string, body:any):Observable<any>{
-      /* console.log("elservicio funciona"); */
-       return this.http.put(url, body);
-       
-       
+  editarExperiencia(url:string, body:any):Observable<any>{
+      return this.http.put(url, body);
       }
 
+      /* ------EDUCACION */
       
+      nuevaEducacion(url:string, body:any):Observable<any>{
+        return this.http.post(url, body);
+      }
+    
+      borrarEducacion(url:string, body:any):Observable<any>{
+        return this.http.delete(url, body);
+        }
+    
+      editarEducacion(url:string, body:any):Observable<any>{
+          return this.http.put(url, body);
+          }
+
 
 }

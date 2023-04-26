@@ -9,11 +9,25 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  public showMe:boolean = true;
-  public showMe2:boolean = false;
   experienciaList:any;
   public inputId: any="";
   public inputId2: any="";
+
+  formLogin=this.fb.group({
+    id: ['',[Validators.required]],
+    company:['',[Validators.required]],
+    position:['',[Validators.required]],
+    personaId:[1,[Validators.required]],
+    start:['',[Validators.required]],
+    end:['',[Validators.required]],
+    img:['',[Validators.required]],
+    city:['',[Validators.required]],
+    tipoEmpleo:['',[Validators.required]],
+    tipoJornada:['',[Validators.required]]
+
+  });
+
+  
 
   constructor(private datosPorfolio:PortfolioService, private fb: FormBuilder, private activatedRoute: ActivatedRoute){
   }
@@ -24,44 +38,29 @@ export class ExperienciaComponent implements OnInit {
       console.log(this.experienciaList);
       
     });
-
-  }
-
-  mostrar(param: any){
-      let cambiar= document.getElementById(param);
-      this.inputId2=this.inputId2+1000;
-     console.log(this.inputId2);
-     return this.inputId2;
-  }
-
-  cancelar(param: any) {
-
-    let cambiar= document.getElementById(param);
-      this.inputId=this.inputId-1000;
-     console.log(this.inputId2);
-     return this.inputId2;
   }
 
   enviarExp(){
     this.datosPorfolio.nuevaExperiencia('http://localhost:8080/new/experiencia', {
-     
-    "id":"1",
-      "company":"Austral",
-      "position":"Tecnico Capocscc",
+      "id":this.formLogin.value.id,
+      "position":this.formLogin.value.position,
+      "company":this.formLogin.value.company,
       "personaId":1,
-      "img":"",
-      "start":"12-12-22",
-      "end":"12-12-23",
-      "city":"Com. Riv.",
-      "tipoEmpleo": "Freelance",
-      "tipoJornada":"Part Time",
-      
-     
+      "img":"url",
+      "start":this.formLogin.value.start ,
+      "end": this.formLogin.value.end ,
+      "city":this.formLogin.value.city ,
+      "tipoEmpleo": this.formLogin.value.tipoEmpleo,
+      "tipoJornada":this.formLogin.value.tipoJornada ,
+
      })
     .subscribe(respuesta =>{
       console.log("Experinecia enviada!")
-    });window.location.reload();
-
+    });
+    if(true){
+      alert("Experiencia cargada!");
+      window.location.reload()
+    };
    }
 
    editarExp(id: any){
@@ -76,21 +75,17 @@ export class ExperienciaComponent implements OnInit {
         "city":this.formLogin.value.city ,
         "tipoEmpleo": this.formLogin.value.tipoEmpleo,
         "tipoJornada":this.formLogin.value.tipoJornada ,
-          
-       
+        
      })
     .subscribe(respuesta =>{
       console.log("Experiencia editada!");
-      
     });
-    
+    alert("Experiencia cargada!");
     window.location.reload();
       }
 
    borrarExp(id: any){
-    this.datosPorfolio.borrarExperiencia('http://localhost:8080/borrar_exp/'+id, {
-      
-     })
+    this.datosPorfolio.borrarExperiencia('http://localhost:8080/borrar_exp/'+id, {})
     .subscribe(respuesta =>{
       console.log("Experinecia borrada!")
     });
@@ -99,25 +94,23 @@ export class ExperienciaComponent implements OnInit {
 
    ponerid(id: any){
     this.inputId=id;
-    console.log(this.inputId);
-    this.formLogin.get("id").setValue(this.inputId);
-    this.inputId2=id;
     return this.inputId; 
    }
    
-   formLogin=this.fb.group({
-    id: this.inputId,
-    company:['',[Validators.required]],
-    position:['',[Validators.required]],
-    personaId:[1,[Validators.required]],
-    start:['',[Validators.required]],
-    end:['',[Validators.required]],
-    img:['',[Validators.required]],
-    city:['',[Validators.required]],
-    tipoEmpleo:['',[Validators.required]],
-    tipoJornada:['',[Validators.required]]
+   mostrar(param: any){
+    let cambiar= document.getElementById(param);
+    this.inputId2=this.inputId2+1000;
+   return this.inputId2;
+    }
 
-  });
+  cancelar(param: any) {
+  let cambiar= document.getElementById(param);
+    this.inputId=this.inputId-1000;
+   return this.inputId2;
+    }
   
+  recargar(){
+    window.location.reload();
+  }
    
 }
