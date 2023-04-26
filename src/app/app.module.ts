@@ -16,6 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RecargaDirective } from './directives/recarga.directive';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { InterceptorService } from './servicios/interceptor.service';
+import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     SkillsComponent,
     ProyectosComponent,
     RecargaDirective,
-    IniciarSesionComponent
+    IniciarSesionComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
