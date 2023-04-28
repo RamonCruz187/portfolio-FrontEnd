@@ -17,6 +17,12 @@ obtenerDatos():Observable<any>{
  
 }
 
+      /* ------ENCABEZADO */
+      editarEncabezado(url:string, body:any):Observable<any>{
+        return this.http.put(url, body);
+        }
+
+
       /* ------EXPERIENCIA */
   nuevaExperiencia(url:string, body:any):Observable<any>{
     return this.http.post(url, body);
@@ -44,5 +50,43 @@ obtenerDatos():Observable<any>{
           return this.http.put(url, body);
           }
 
+          /* ------ACERCA DE */
+          nuevaAcercaDe(url:string, body:any):Observable<any>{
+            return this.http.post(url, body);
+          }
+        
+          borrarAcercaDe(url:string, body:any):Observable<any>{
+            return this.http.delete(url, body);
+            }
+        
+          editarAcercaDe(url:string, body:any):Observable<any>{
+              return this.http.put(url, body);
+              }
 
+               /* ------SKILLS */
+  nuevaHabilidad(url:string, body:any):Observable<any>{
+    return this.http.post(url, body);
+  }
+
+  borrarHabilidad(url:string, body:any):Observable<any>{
+    return this.http.delete(url, body);
+    }
+
+  editarHabilidad(url:string, body:any):Observable<any>{
+      return this.http.put(url, body);
+      }
+
+
+      /* ------PROYECTOS */
+  nuevoProyecto(url:string, body:any):Observable<any>{
+    return this.http.post(url, body);
+  }
+
+  borrarProyecto(url:string, body:any):Observable<any>{
+    return this.http.delete(url, body);
+    }
+
+  editarProyecto(url:string, body:any):Observable<any>{
+      return this.http.put(url, body);
+      }
 }

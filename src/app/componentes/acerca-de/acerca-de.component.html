@@ -3,9 +3,33 @@
         <div class="col col-sm-9 col-md-9 col-lg-9 col-xl-9">
             <h2>Acerca de</h2>
             <p >{{miPorfolio.about}}</p>
+
+
         </div>
         <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-3" >
-            <a href="#" class="col"><i class="fa-solid fa-user-pen editar-foto"></i></a>
+            <a href="#" class="col" data-bs-toggle="modal" data-bs-target="#staticBackdropAcercaDe" ><i class="fa-solid fa-user-pen editar-foto"></i></a>
         </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdropAcercaDe" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Acerca de</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <textarea name="textArea" id="textAreaAbout" cols="50" rows="5" value={{miPorfolio.about}} [(ngModel)]="about" ></textarea >
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-primary" (click)="editarEncabezado (miPorfolio.id)">Actualizar</button> 
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+                     <!-- ------fin Modal------------ -->
+
     </div>
 </div>

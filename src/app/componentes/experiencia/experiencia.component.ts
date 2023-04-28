@@ -1,4 +1,4 @@
-import { Component, Input, OnInit,} from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';

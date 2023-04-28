@@ -2,22 +2,108 @@
     <div class="proyectos-row row">
         <div class="title col">
             <div class="titulo"><h3>Proyectos</h3></div>
-            <div class="modificar col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="#"><i class="fa-solid fa-plus"></i></a></div>
+            <div class="modificar col-sm-1 col-md-1 col-lg-1 col-xl-1"><a data-bs-toggle="modal" data-bs-target="#nuevoProyecto"><i class="fa-solid fa-plus"></i></a></div>
+        
+  <!-- Modal -->
+  <div class="modal fade" id="nuevoProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Nuevo Proyecto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form [formGroup]="formProyecto"   >
+                          
+                Título: <input type="text"    formControlName="nombre" ><br>
+                Descripción: <input type="text"  formControlName="descripcion" ><br>
+                Url: <input type="text"  formControlName="urlProyecto" ><br>
+                
+              </form>
+
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-primary" (click)="enviarProyecto()">Enviar</button> 
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+        
         </div>
 
-
-        <div  class="proyectos-contenido col">
+        <ul class="items-list">
+            <li *ngFor="let proyecto of proyectoList">
+                <div  class="proyectos-contenido col">
             <div class="proyectos-contenido-row row">
                 <div class="proyectos-item col">
-                    <h3   >Portfolio Web</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum maxime enim accusantium suscipit unde, deleniti ea placeat alias officiis sequi fugit amet repudiandae harum iste ducimus sunt nostrum possimus dolorem.</p>
+                    <h3   >{{proyecto.nombre}}</h3>
+                    <p>{{proyecto.descripcion}}</p>
+                    <p>Url: {{proyecto.urlProyecto}}</p>
                 </div>
                 <div class="proyectos-editar col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                    <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="#"><i class="fa-solid fa-trash"></i></a>
+                    <a data-bs-toggle="modal"  [attr.data-bs-target]="'#'+proyecto.nombre" (click)="ponerid(proyecto.id)"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a (click)="borrarProyecto(proyecto.id)" data-bs-toggle="modal" data-bs-target="#borrarProyecto" href="#"><i class="fa-solid fa-trash" ></i></a>
+      
+  <!-- Modal borrar -->
+  <div class="modal fade" id="borrarProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmación</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"  (click)="recargar()"></button>
+        </div>
+        <div class="modal-body">
+          Proyecto eliminado con éxito.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="recargar()">Cerrar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal Edicion -->
+  <div class="modal fade" [id]=proyecto.nombre data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar {{proyecto.nombre}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+            <form [formGroup]="formProyecto"   >
+                          
+                Título: <input type="text"    formControlName="nombre" ><br>
+                Descripción: <input type="text"  formControlName="descripcion" ><br>
+                Url: <input type="text"  formControlName="urlProyecto" ><br>
+                
+              </form>
+
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-primary" (click)="editarProyecto(proyecto.id)">Actualizar</button> 
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+                     <!-- Termina Modal Edicion -->    
+                
+                
                 </div>
             </div>                    
         </div>
+            </li>
+        </ul>
+        
     </div>
 </div>
 

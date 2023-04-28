@@ -15,37 +15,150 @@
 
 <header class="container">   <!-- --------ENCABEZADO --------- -->
     <div id="header" class="row">  <!--  ----BOTON EDITAR IMAGEN DE FONDO------ -->
-        <div class="col">
-            <a href="#"><i id="edit" class="fa-solid fa-user-pen fa-xl"></i></a>
-        </div>
+        
     </div>
     <div class=" row datos ">
         <div class="col datos1 col-sm-12 col-md-9 col-lg-9 col-xl-9">
                     <!-- ------IMAGEN DE PERFIL------------ -->
             <div class=" col-sm-4 col-md-4 col-lg-4 col-xl-4 py-3" id="img-contenedor">
                 <img [src]="miPorfolio.image" class="img-fluid" id="foto" alt="logo">
-                <a href="#"><i class="fa-solid fa-user-pen fa-xl editar-foto"></i></a>
+                
             </div>
                         <!-- ------INFORMACION PERSONAL------ -->
-
-            <h2><strong>{{miPorfolio.name}}</strong></h2>
-            <div class="row">
-                <p class="col" >{{miPorfolio.position}}</p>  
-                <a  class="col"><i class="fa-solid fa-user-pen editar-foto"></i></a>
+            <div >
+                <h2><strong>{{miPorfolio.name + " " }}</strong>  <a a href="" data-bs-target="#exampleModalToggleEncabezado" data-bs-toggle="modal"><i class="fa-solid fa-user-pen fa-l editar-foto" ></i></a> </h2>   
             </div>
             <div class="row">
-                <p class="col">{{miPorfolio.ubication}}<a href="#">Inf. de contacto</a> </p> 
-                <a href="#" class="col"><i class="fa-solid fa-user-pen editar-foto"></i></a>   
+                <h5 class="col" >{{miPorfolio.position}}</h5>    
             </div>
+            <div class="row">
+                <p class="col">{{miPorfolio.ubication}}<a href="" class="primary"  data-bs-toggle="modal" data-bs-target="#staticBackdropInfo">Inf. de contacto</a> </p> 
+                
+             
 
-            <button type="button" class="btn btn-primary">Tengo Interes en</button>
-            <button type="button" class="btn btn-light" >Añadir Sección</button>
-            <button type="button" class="btn btn-light" >Más</button>
+              <!-- Modal Info de Contacto-->
+<div class="modal fade" id="staticBackdropInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Contacto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Cel: {{miPorfolio.tel}}</h5>
+        <h5>Mail: {{miPorfolio.mail}} </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+                <!--Termina Modal Info de Contacto-->
+
+            </div>
+            <button type="button" class="btn btn-primary">CV</button>
+            <button type="button" class="btn btn-light" >Documentos</button>
+            <button type="button" class="btn btn-light" >Otros</button>
       
         </div>
                     <!-- ------LOGO ARGENTINA PROGRAMA -->
         <div class="col datos2 col-sm-12 col-md-3 col-lg-3 col-xl-3 align-self-center ">
             <img class="align-self-end img-fluid" src="../assets/imagenes/arg-programa.png" alt="">
         </div>
+
+        <!-- ----------------modal------------------------------ -->
+
+        <div class="modal fade" id="exampleModalToggleEncabezado" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Editar</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 <h3 class="modal-title fs-5">Editar datos personales</h3>
+                 <form [formGroup]="formEncabezado"  (submit)="editarEncabezado(miPorfolio.id)" >
+                   
+                  Nombre : <input type="text" formControlName="name"  > <br>
+                  Posición Actual: <input type="text" formControlName="position"> <br>
+                  Mail : <input type="text" formControlName="mail"> <br>
+                  Teléfono : <input type="text" formControlName="tel"> <br>
+                  Ubicación : <input type="text" formControlName="ubication"> <br>
+
+                  </form>
+                  <h3 class="modal-title fs-5">Otros</h3>
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2Encabezado" data-bs-toggle="modal">Editar Foto de Perfil</button><br>
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle3Encabezado" data-bs-toggle="modal">Editar Fondo</button><br>
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle4Encabezado" data-bs-toggle="modal">Editar Acerca de</button>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" (click)="editarEncabezado(miPorfolio.id)" class="btn btn-primary">Actualizar</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    <!-- modal 2 -->
+          <div class="modal fade" id="exampleModalToggle2Encabezado" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Hide this modal and show the first with the button below.
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggleEncabezado" data-bs-toggle="modal">Back to first</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                <!-- modal3  -->
+                <div class="modal fade" id="exampleModalToggle3Encabezado" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 3</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Hide this modal and show the first with the button below.
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn btn-primary" data-bs-target="#exampleModalToggleEncabezado" data-bs-toggle="modal">Back to first</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- modal4  -->
+                <div class="modal fade" id="exampleModalToggle4Encabezado" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 4</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Hide this modal and show the first with the button below.
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn btn-primary" data-bs-target="#exampleModalToggleEncabezado" data-bs-toggle="modal">Back to first</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+    
+        <!-- ----------------fin modal------------------------------ -->
+    
+    
     </div>
 </header>
