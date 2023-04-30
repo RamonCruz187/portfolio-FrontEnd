@@ -12,8 +12,8 @@ export class IniciarSesionComponent {
 form: FormGroup;
   constructor(private formBuilder: FormBuilder, private autenticacionService: AutenticacionService, private ruta:Router){
     this.form= formBuilder.group({
-      email:['', [Validators.required, Validators.email]],
-      password:['', [Validators.required, Validators.minLength(8)]],
+      nombreUsuario:['', [Validators.required]],
+      password:['', [Validators.required]],
       deviceInfo:this.formBuilder.group({
         deviceId:["17867868768"],
         deviceType:["DEVICE_TYPE_ANDROID"],
@@ -23,7 +23,7 @@ form: FormGroup;
 }
 
 get Email(){
-  return this.form.get('email')
+  return this.form.get('nombreUsuario')
 }
 
 get password(){
@@ -31,11 +31,12 @@ return this.form.get('password')
 }
 
 onEnviar(event:Event){
+  
   event.preventDefault;
   this.autenticacionService.IniciarSesion(this.form.value).subscribe(data => {
     console.log("DATA: " + JSON.stringify(data));
     this.ruta.navigate(['/portfolio']);
-    console.log(this.form.value)
+    
   })
 }
 

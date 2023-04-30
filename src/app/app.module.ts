@@ -13,7 +13,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormBuilder, FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { RecargaDirective } from './directives/recarga.directive';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
@@ -32,7 +31,6 @@ const appRoutes: Routes = [
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    RecargaDirective,
     IniciarSesionComponent,
     PortfolioComponent
   ],

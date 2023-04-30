@@ -10,17 +10,17 @@ export class GuardGuard implements CanActivate {
   constructor(private autenticacionServicio: AutenticacionService, private rutas:Router){}
   
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    /* let currentUser=this.autenticacionServicio.UsuarioAutenticado;
-    if (currentUser&& currentUser.accessToken){
+    route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    let currentUser=this.autenticacionServicio.UsuarioAutenticado;
+    if (currentUser){
+      
       return true;
     }else{
       this.rutas.navigate(['/iniciar-sesion']);
       return false;
-    } */
+    }
 
-    return true;
+    /* return true; */
     
   }
   
