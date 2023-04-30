@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -11,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProyectosComponent {
   proyectoList: any;
   public inputId: any="";
+  isLogged = false;
 
   formProyecto=this.fbProyecto.group({
     id: ['',[Validators.required]],
@@ -22,7 +24,7 @@ export class ProyectosComponent {
 
   });
   
-  constructor(private datosPorfolio:PortfolioService, private fbProyecto: FormBuilder, private activatedRoute: ActivatedRoute){
+  constructor(private datosPorfolio:PortfolioService, private fbProyecto: FormBuilder, private tokenService: TokenService){
 
   }
 
@@ -30,6 +32,11 @@ export class ProyectosComponent {
     this.datosPorfolio.obtenerDatos().subscribe((data) => {
       this.proyectoList = data[0].proyecto;
     });
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      }else{
+        this.isLogged = false;
+      }
   }
 
   enviarProyecto(){

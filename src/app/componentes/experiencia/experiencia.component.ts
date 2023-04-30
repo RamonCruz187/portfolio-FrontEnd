@@ -2,6 +2,7 @@ import { Component, OnInit,} from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -12,6 +13,8 @@ export class ExperienciaComponent implements OnInit {
   experienciaList:any;
   public inputId: any="";
   public inputId2: any="";
+
+  isLogged = false;
 
   formLogin=this.fb.group({
     id: ['',[Validators.required]],
@@ -29,7 +32,7 @@ export class ExperienciaComponent implements OnInit {
 
   
 
-  constructor(private datosPorfolio:PortfolioService, private fb: FormBuilder, private activatedRoute: ActivatedRoute){
+  constructor(private datosPorfolio:PortfolioService, private fb: FormBuilder, private tokenService: TokenService){
   }
   
   ngOnInit(): void{
@@ -38,6 +41,12 @@ export class ExperienciaComponent implements OnInit {
       console.log(this.experienciaList);
       
     });
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      }else{
+        this.isLogged = false;
+      }
+   
   }
 
   enviarExp(){

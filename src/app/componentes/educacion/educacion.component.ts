@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-educacion',
@@ -12,6 +13,8 @@ export class EducacionComponent implements OnInit {
   educacionList:any;
   public inputId: any="";
   public inputId2: any="";
+
+  isLogged = false;
 
   formEducacion=this.fb.group({
     id: ['',[Validators.required]],
@@ -25,13 +28,19 @@ export class EducacionComponent implements OnInit {
     estadoEducacion:['',[Validators.required]],
   });
 
-  constructor(private datosPorfolio:PortfolioService, private fb: FormBuilder, private activatedRoute: ActivatedRoute){}
+  constructor(private datosPorfolio:PortfolioService, private fb: FormBuilder, private tokenService: TokenService){}
 
   ngOnInit(): void{
     this.datosPorfolio.obtenerDatos().subscribe(data =>{
       this.educacionList = data[0].educacion;
       console.log(this.educacionList);
-    })
+    });
+
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      }else{
+        this.isLogged = false;
+      }
   }
 
   enviarEdu(){

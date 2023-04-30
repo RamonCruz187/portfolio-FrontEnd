@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-skills',
@@ -12,13 +13,19 @@ export class SkillsComponent {
   progress: number;
   public inputId: any="";
   public inputId2: any="";
+  isLogged = false;
 
-  constructor(private datosPorfolio: PortfolioService) {}
+  constructor(private datosPorfolio: PortfolioService, private tokenService: TokenService) {}
 
   ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe((data) => {
       this.skillsList = data[0].tecnologia;
     });
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      }else{
+        this.isLogged = false;
+      }
   }
 
   enviarHabilidad() {

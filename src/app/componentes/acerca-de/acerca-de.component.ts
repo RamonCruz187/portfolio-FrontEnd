@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -9,14 +11,25 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class AcercaDeComponent {
   miPorfolio:any="";
   about:any="";
+  isLogged = false;
 
-  constructor(private datosPorfolio:PortfolioService){}
+  constructor(private datosPorfolio:PortfolioService, private tokenService: TokenService){
+    
+  }
 
   ngOnInit(): void{
     this.datosPorfolio.obtenerDatos().subscribe(data =>{
      this.miPorfolio=data[0];
     });
+
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      }else{
+        this.isLogged = false;
+      }
    }
+
+   
 
    editarEncabezado(id: any){
 
@@ -42,6 +55,7 @@ export class AcercaDeComponent {
     });
     alert("Acerca de editado!");
     window.location.reload();
+    
       }
 
 

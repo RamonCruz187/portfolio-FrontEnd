@@ -1,7 +1,7 @@
 <div class="educacion container ">   <!-- ---------EDUCACION ------------- -->
     <div class="row">
         <div class="col"><h2>Educación</h2></div>
-        <div class="col col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="#" data-bs-toggle="modal" data-bs-target="#agregarEducacion"><i class="fa-solid fa-plus"></i></a></div>
+        <div class="col col-sm-1 col-md-1 col-lg-1 col-xl-1"><a *ngIf="isLogged" href="#" data-bs-toggle="modal" data-bs-target="#agregarEducacion"><i class="fa-solid fa-plus"></i></a></div>
         
         <!----------- modal Agregar Experiencia----------------- -->           
         <div class="modal fade" id="agregarEducacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -80,8 +80,8 @@
                 
                 
                 <div class="editar-exp col col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                    <a type="button" (click)="ponerid(educacion.id); mostrar(educacion.id)" ><i class="fa-solid fa-pen-to-square"></i></a>
-                <a  type="button" (click)="borrarEdu(educacion.id)" data-bs-target="#modalBorrarEdu" data-bs-toggle="modal" ><i class="fa-solid fa-trash"></i></a>
+                    <a *ngIf="isLogged" type="button" (click)="ponerid(educacion.id); mostrar(educacion.id)" ><i class="fa-solid fa-pen-to-square"></i></a>
+                <a *ngIf="isLogged"  type="button" (click)="borrarEdu(educacion.id)" data-bs-target="#modalBorrarEdu" data-bs-toggle="modal" ><i class="fa-solid fa-trash"></i></a>
                 </div>
                                 <!-- --------modal eliminar------------ --> 
                 <div class="modal fade" id="modalBorrarEdu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
