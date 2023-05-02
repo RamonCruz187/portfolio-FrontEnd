@@ -19,6 +19,13 @@ export class EncabezadoComponent {
   password: string;
   roles: string[]=[];
   errMsj: string;
+  urlRed: string;
+  urlRedLinkedin: string;
+  urlRedInstagram: string;
+  urlRedTwitter: string;
+  urlRedFacebbok: string;
+  idRed = 0;
+  tipoRed: string;
 
 
   miPorfolio:any="";
@@ -43,7 +50,13 @@ export class EncabezadoComponent {
   ngOnInit(): void{
    this.datosPorfolio.obtenerDatos().subscribe(data =>{
     this.miPorfolio=data[0];
+    this.urlRedLinkedin=data[0].red[0].urlRed;
+    this.urlRedInstagram=data[0].red[1].urlRed;
+    this.urlRedTwitter=data[0].red[2].urlRed;
+    this.urlRedFacebbok=data[0].red[3].urlRed;
     console.log(data);
+    console.log(this.miPorfolio.red[0].id);
+    console.log(this.urlRedLinkedin);
     console.log("esta logeado en OnInit: " + this.isLogged);
    });
 
@@ -105,6 +118,29 @@ export class EncabezadoComponent {
     alert("Encabezado editado!");
     window.location.reload();
       }
+
+      editarRed(urlred: string){
+        this.datosPorfolio.editarRed('http://localhost:8080/editar/red/'+this.idRed, {
+           
+        "id": this.idRed,
+        "tipoRed": this.tipoRed,
+        "urlRed": this.urlRed,
+        "iconoRed": "icono",
+        "personaId": 1
+        
+         })
+        .subscribe(respuesta =>{
+         
+          console.log("Red editada!");
+        });
+        alert("Red Editada!");
+        window.location.reload();
+          }
+
+          mostrarRed(id: any, tipo: any){
+            this.idRed=id;
+            this.tipoRed=tipo;
+          }
 
 
 }

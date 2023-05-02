@@ -89,4 +89,17 @@ obtenerDatos():Observable<any>{
   editarProyecto(url:string, body:any):Observable<any>{
       return this.http.put(url, body);
       }
+
+      /* ------REDES */
+  nuevaRed(url:string, body:any):Observable<any>{
+    return this.http.post(url, body);
+  }
+
+  borrarRed(url:string, body:any):Observable<any>{
+    return this.http.delete(url, body);
+    }
+
+  editarRed(url:string, body:any):Observable<any>{
+      return this.http.put(url, body);
+      }
 }

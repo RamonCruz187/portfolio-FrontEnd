@@ -38,7 +38,6 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit(): void{
     this.datosPorfolio.obtenerDatos().subscribe(data =>{
       this.experienciaList = data[0].experiencias;
-      console.log(this.experienciaList);
       
     });
     if(this.tokenService.getToken()){
@@ -121,5 +120,7 @@ export class ExperienciaComponent implements OnInit {
   recargar(){
     window.location.reload();
   }
+
+  
    
 }
