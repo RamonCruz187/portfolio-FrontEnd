@@ -1,10 +1,10 @@
-<div class="proyectos container"> <!-- --------PROYECTOS----------- -->
+<div class="proyectos container "> <!-- --------PROYECTOS----------- -->
   <div class="proyectos-row row">
     <div class="title col">
       <div class="titulo">
         <h3>Proyectos</h3>
       </div>
-      <div class="modificar col-sm-1 col-md-1 col-lg-1 col-xl-1"><a *ngIf="isLogged" data-bs-toggle="modal"
+      <div class="modificar col-sm-1 col-md-1 col-lg-1 col-xl-1"><a *ngIf="isLogged" href="#" data-bs-toggle="modal"
           data-bs-target="#nuevoProyecto"><i class="fa-solid fa-plus"></i></a></div>
 
       <!-- Modal -->
@@ -17,14 +17,13 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
               <form [formGroup]="formProyecto">
 
                 Título: <input type="text" formControlName="nombre"><br>
                 Descripción: <input type="text" formControlName="descripcion"><br>
                 Url: <input type="text" formControlName="urlProyecto"><br>
+              
               </form>
-
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" (click)="enviarProyecto()">Enviar</button>
@@ -45,7 +44,7 @@
               <p>Url: <a href={{proyecto.urlProyecto}}>{{proyecto.urlProyecto}}</a></p>
             </div>
             <div class="proyectos-editar col-sm-1 col-md-1 col-lg-1 col-xl-1">
-              <a *ngIf="isLogged" data-bs-toggle="modal" [attr.data-bs-target]="'#hola'+proyecto.id"
+              <a *ngIf="isLogged" href="#" data-bs-toggle="modal" [attr.data-bs-target]="'#proyecto'+proyecto.id"
                 (click)="ponerid(proyecto.id)"><i class="fa-solid fa-pen-to-square"></i></a>
               <a *ngIf="isLogged" (click)="borrarProyecto(proyecto.id)" data-bs-toggle="modal"
                 data-bs-target="#borrarProyecto" href="#"><i class="fa-solid fa-trash"></i></a>
@@ -72,7 +71,7 @@
                 </div>
               </div>
               <!-- Modal Edicion -->
-              <div class="modal fade" [id]='"hola"+proyecto.id' data-bs-backdrop="static" data-bs-keyboard="false"
+              <div class="modal fade" [id]='"proyecto"+proyecto.id' data-bs-backdrop="static" data-bs-keyboard="false"
                 tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -83,9 +82,10 @@
                     <div class="modal-body">
 
                       <form [formGroup]="formProyecto">
-                        Título: <input type="text" formControlName="nombre"><br>
-                        Descripción: <input type="text" formControlName="descripcion"><br>
-                        Url: <input type="text" formControlName="urlProyecto"><br>
+                        Título: <input type="text" formControlName="nombre" size="40" ><br>
+                        Descripción: <br> 
+                        <textarea name="" id="" cols="50" rows="7" formControlName="descripcion"></textarea><br>
+                        Url: <input type="text" formControlName="urlProyecto" size="40"><br>
                       </form>
 
                     </div>

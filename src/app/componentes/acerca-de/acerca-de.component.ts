@@ -16,7 +16,7 @@ export class AcercaDeComponent {
   constructor(
     private datosPorfolio: PortfolioService,
     private tokenService: TokenService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe((data) => {

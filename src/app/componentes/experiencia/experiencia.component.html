@@ -24,6 +24,7 @@
                 Comienzo: <input type="date" id="start" formControlName="start"><br>
                 Fin: <input type="date" id="end" formControlName="end"><br>
                 URL Imagen: <input type="text" id="img" formControlName="img"><br>
+                <p>Url de prueba: https://img.freepik.com/vector-gratis/plantilla-diseno-logotipo-trabajo-equipo-diseno-plano_23-2149509992.jpg </p>
                 Ciudad: <input type="text" id="city" formControlName="city"><br>
                 Tipo de Empleo: <select name="" id="tipoEmpleo" formControlName="tipoEmpleo">
                   <option value="Empleado">Empleado</option>
@@ -51,9 +52,9 @@
       <!-- ----------comienza ngFor ----------------------- -->
       <li *ngFor="let experiencia of experienciaList">
         <div class="experiencia-item row">
-          <div class="exp col">
+          <div class="exp col col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
             <div class="logo-exp col-lg-2 col-xl-2">
-              <img class="img-fluid" src="../assets/imagenes/Freelancer.png" alt="">
+              <img class="img-fluid" [src]="experiencia.img" alt="">
             </div>
             <div class="exp-detalles">
               <div id={{experiencia.id}} class="">
@@ -74,6 +75,7 @@
                       placeholder={{experiencia.start}}><br>
                     Fin: <input type="date" id="end" formControlName="end" placeholder={{experiencia.end}}><br>
                     URL Imagen: <input type="text" id="img" formControlName="img" placeholder={{experiencia.img}}><br>
+                    <p>Url de prueba: https://img.freepik.com/vector-gratis/plantilla-diseno-logotipo-trabajo-equipo-diseno-plano_23-2149509992.jpg </p>
                     Ciudad: <input type="text" id="city" formControlName="city" placeholder={{experiencia.city}}><br>
                     Tipo de Empleo: <select name="" id="tipoEmpleo" formControlName="tipoEmpleo">
                       <option value="Empleado">Empleado</option>
@@ -96,7 +98,7 @@
               </div>
             </div>
           </div>
-          <div class="editar-exp col col-sm-1 col-md-1 col-lg-1 col-xl-1">
+          <div class="editar-exp col col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
             <a *ngIf="isLogged" type="button" (click)="ponerid(experiencia.id); mostrar(experiencia.id)"><i
                 class="fa-solid fa-pen-to-square"></i></a>
             <a *ngIf="isLogged" type="button" (click)="borrarExp(experiencia.id)" data-bs-target="#modalBorrar"

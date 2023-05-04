@@ -29,7 +29,6 @@
         </div>
       </div>
       <!--Fin  Modal -->
-
     </div>
     <div class="content col">
       <ul class="items-list">
@@ -42,16 +41,15 @@
               </span>
               <label for="file"></label>
               <progress id="file" max="100" value={{skill.progress}}> 70% </progress>
-
               <div class="edit col col-sm-1 col-md-1 col-lg-1 col-xl-1">
-                <a *ngIf="isLogged" data-bs-toggle="modal" [attr.data-bs-target]="'#hola'+skill.id"
+                <a *ngIf="isLogged" href="#" data-bs-toggle="modal" [attr.data-bs-target]="'#hola'+skill.id"
                   (click)="ponerid(skill.id)"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a *ngIf="isLogged" href="#" (click)="borrarHabilidad(skill.id)" data-bs-toggle="modal"
                   data-bs-target="#borrarHabilidad"><i class="fa-solid fa-trash"></i></a>
 
                 <!-- Modal editar habilidad-->
-                <div class="modal fade" [id]='"hola"+skill.id'  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" [id]='"hola"+skill.id' data-bs-backdrop="static" data-bs-keyboard="false"
+                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -66,7 +64,6 @@
                         <button type="button" class="btn btn-primary"
                           (click)="editarHabilidad(skill.id)">Enviar</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
                       </div>
                     </div>
                   </div>
@@ -89,7 +86,6 @@
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                           (click)="recargar()">Cerrar</button>
-
                       </div>
                     </div>
                   </div>

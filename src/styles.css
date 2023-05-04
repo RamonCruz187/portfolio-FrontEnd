@@ -1,18 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
+form input {
+    margin: 2px;
+}
 
-.barra{
+
+div button {
+    margin: 2px;
+}
+
+.barra {
     background-color: black;
-    display:inline-flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -21,35 +28,31 @@ ul{
     margin-bottom: 10px;
     margin-left: 0;
     margin-right: 0;
-    
 }
 
-.yo-programo{
+.yo-programo {
     display: inline-flex;
     flex-direction: row;
     color: antiquewhite;
-    
 }
 
-.yo-programo img{
+.yo-programo img {
     height: 50px;
     padding-top: 5px;
-    
 }
 
-.yo-programo h3{
+.yo-programo h3 {
     margin-left: 20px;
     display: inherit;
     align-items: end;
-    
 }
 
-#iconos{
+#iconos {
     display: inherit;
     justify-content: flex-end;
 }
 
-#iconos i{
+#iconos i {
     display: inherit;
     margin: 10px;
     margin-top: 20px;
@@ -58,57 +61,67 @@ ul{
 }
 
 
-#header{
-    height: 40vw;
-    min-height: 100px;
-    max-height: 350px;
-    background-image: url("./assets/imagenes/code.jpg");
+#header {
+    height: 30vw;
+    min-height: 300px;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20px 20px 0px 0px;
-   
 }
 
-#edit{
-    color:whitesmoke;
+#header img {
+    height: 30vw;
+    min-height: 300px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    padding: 0;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#edit {
+    color: whitesmoke;
     display: flex;
     justify-content: flex-end;
     padding: 10px;
     margin-top: 20px;
 }
 
-.datos{
+.datos {
     padding: 10px;
     border: 1px solid grey;
-    border-radius:0px 0px 20px 20px;
+    border-radius: 0px 0px 20px 20px;
 }
 
-#img-contenedor{
-margin-top: -200px;
-display: flex;
-align-items: flex-end;
-
+#img-contenedor {
+    margin-top: -150px;
+    display: flex;
+    height: 200px;
+    align-items: flex-end;
 }
 
-#foto{
+#foto {
     border-radius: 100px;
 
 }
 
-.editar-foto{
+.editar-foto {
     margin-bottom: 30px;
 }
+
 .datos2 {
-   justify-content: end;
-   margin: 0;
+    justify-content: end;
+    margin: 0;
 }
 
-.acerca-de{
+.logoArgentina {
+    max-height: 70px;
+}
+
+.acerca-de {
     margin-top: 5px;
     border: 1px solid grey;
-    border-radius:20px;
+    border-radius: 20px;
     padding: 25px;
-
 }
 
 .acerca-de i {
@@ -117,10 +130,14 @@ align-items: flex-end;
     padding-top: 20px;
 }
 
-.experiencia{
+.acercaTexto {
+    min-width: 400px;
+}
+
+.experiencia {
     margin-top: 5px;
     border: 1px solid grey;
-    border-radius:20px;
+    border-radius: 20px;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -128,97 +145,110 @@ align-items: flex-end;
 }
 
 
-.experiencia-item{
+.experiencia-item {
     padding-top: 20px;
     justify-content: space-between;
 }
 
-.exp-detalles{
+.exp-detalles {
     padding-left: 30px;
 }
 
-.exp{
+.exp {
     display: inherit;
+    min-width: 400px;
 }
 
-.logo-exp img{
+.logExo {
     height: 75%;
+    max-width: 120px;
 }
 
-.educacion{
+.logo-exp img {
+
+    max-width: 100px;
+}
+
+.experiencia i {
+    color: #0d6efd;
+}
+
+.educacion i {
+    color: #0d6efd;
+}
+
+.educacion {
     margin-top: 5px;
     border: 1px solid grey;
-    border-radius:20px;
+    border-radius: 20px;
     padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.educacion-item{
+.educacion-item {
     padding-top: 20px;
     justify-content: space-between;
 }
 
-.skills{
+.skills {
     margin-top: 5px;
     border: 1px solid grey;
-    border-radius:20px;
+    border-radius: 20px;
     padding: 25px;
-    
 }
 
-.skills-row{
-
+.skills-row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.title{
+.title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 20px;
 }
 
-.skill-barra{
+.skill-barra {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.edit{
+.edit {
     display: inherit;
     justify-content: center;
 }
 
-.edit i{
+.edit i {
     padding: 5px;
     padding-bottom: 20px;
 }
 
-.proyectos{
+.proyectos {
     margin-top: 5px;
     border: 1px solid grey;
-    border-radius:20px;
+    border-radius: 20px;
     padding: 25px;
 }
 
-.proyectos-row{
+.proyectos-row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.proyectos-item h3{
+.proyectos-item h3 {
     color: rgb(16, 16, 145);
 }
 
-.title{
+.title {
     display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .modificar {
@@ -226,6 +256,3 @@ align-items: flex-end;
     flex-direction: row;
     justify-content: center;
 }
-
-/* -----------------estilos js----------- */
-
