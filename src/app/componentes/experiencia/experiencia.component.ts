@@ -44,7 +44,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   enviarExp() {
-    this.datosPorfolio.nuevaExperiencia('http://localhost:8080/new/experiencia', {
+    this.datosPorfolio.nuevaExperiencia('https://backendportfolio-mdw1.onrender.com/new/experiencia', {
       "id": this.formLogin.value.id,
       "position": this.formLogin.value.position,
       "company": this.formLogin.value.company,
@@ -66,7 +66,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   editarExp(id: any) {
-    this.datosPorfolio.editarExperiencia('http://localhost:8080/editar/experiencia/' + id, {
+    this.datosPorfolio.editarExperiencia('https://backendportfolio-mdw1.onrender.com/editar/experiencia/' + id, {
       "id": this.inputId,
       "position": this.formLogin.value.position,
       "company": this.formLogin.value.company,
@@ -86,7 +86,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   borrarExp(id: any) {
-    this.datosPorfolio.borrarExperiencia('http://localhost:8080/borrar_exp/' + id, {})
+    this.datosPorfolio.borrarExperiencia('https://backendportfolio-mdw1.onrender.com/borrar_exp/' + id, {})
       .subscribe(respuesta => {
         console.log("Experinecia borrada!")
       });

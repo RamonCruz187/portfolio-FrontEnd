@@ -48,7 +48,7 @@ export class EducacionComponent implements OnInit {
 
   enviarEdu() {
     this.datosPorfolio
-      .nuevaEducacion('http://localhost:8080/new/educacion', {
+      .nuevaEducacion('https://backendportfolio-mdw1.onrender.com/new/educacion', {
         id: this.formEducacion.value.id,
         school: this.formEducacion.value.school,
         title: this.formEducacion.value.title,
@@ -70,7 +70,7 @@ export class EducacionComponent implements OnInit {
 
   editarEdu(id: any) {
     this.datosPorfolio
-      .editarEducacion('http://localhost:8080/editar/educacion/' + id, {
+      .editarEducacion('https://backendportfolio-mdw1.onrender.com/editar/educacion/' + id, {
         id: this.inputId,
         school: this.formEducacion.value.school,
         title: this.formEducacion.value.title,
@@ -90,7 +90,7 @@ export class EducacionComponent implements OnInit {
 
   borrarEdu(id: any) {
     this.datosPorfolio
-      .borrarEducacion('http://localhost:8080/borrar_edu/' + id, {})
+      .borrarEducacion('https://backendportfolio-mdw1.onrender.com/borrar_edu/' + id, {})
       .subscribe((respuesta) => {
         console.log('Educacion borrada!');
       });

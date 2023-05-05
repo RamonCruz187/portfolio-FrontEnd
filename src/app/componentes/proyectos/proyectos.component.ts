@@ -38,7 +38,7 @@ export class ProyectosComponent {
   }
 
   enviarProyecto() {
-    this.datosPorfolio.nuevoProyecto('http://localhost:8080/new/proyecto', {
+    this.datosPorfolio.nuevoProyecto('https://backendportfolio-mdw1.onrender.com/new/proyecto', {
       "id": this.formProyecto.value.id,
       "nombre": this.formProyecto.value.nombre,
       "descripcion": this.formProyecto.value.descripcion,
@@ -55,7 +55,7 @@ export class ProyectosComponent {
   }
 
   editarProyecto(id: any) {
-    this.datosPorfolio.editarProyecto('http://localhost:8080/editar/proyecto/' + id, {
+    this.datosPorfolio.editarProyecto('https://backendportfolio-mdw1.onrender.com/editar/proyecto/' + id, {
       "id": this.inputId,
       "nombre": this.formProyecto.value.nombre,
       "descripcion": this.formProyecto.value.descripcion,
@@ -70,7 +70,7 @@ export class ProyectosComponent {
   }
 
   borrarProyecto(id: any) {
-    this.datosPorfolio.borrarProyecto('http://localhost:8080/borrar_pro/' + id, {})
+    this.datosPorfolio.borrarProyecto('https://backendportfolio-mdw1.onrender.com/borrar_pro/' + id, {})
       .subscribe(respuesta => {
         console.log("Proyecto borrado!")
       });

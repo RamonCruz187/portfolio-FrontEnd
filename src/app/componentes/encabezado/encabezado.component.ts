@@ -98,7 +98,7 @@ export class EncabezadoComponent {
   }
 
   editarEncabezado(id: any) {
-    this.datosPorfolio.editarEncabezado('http://localhost:8080/editar/persona/' + id, {
+    this.datosPorfolio.editarEncabezado('https://backendportfolio-mdw1.onrender.com/editar/persona/' + id, {
 
       "id": this.miPorfolio.id,
       "name": this.formEncabezado.value.name,
@@ -122,7 +122,7 @@ export class EncabezadoComponent {
   }
 
   editarFoto(id: any) {
-    this.datosPorfolio.editarEncabezado('http://localhost:8080/editar/persona/' + id, {
+    this.datosPorfolio.editarEncabezado('https://backendportfolio-mdw1.onrender.com/editar/persona/' + id, {
 
       "id": this.miPorfolio.id,
       "name": this.miPorfolio.name,
@@ -146,7 +146,7 @@ export class EncabezadoComponent {
   }
 
   editarFondo(id: any) {
-    this.datosPorfolio.editarEncabezado('http://localhost:8080/editar/persona/' + id, {
+    this.datosPorfolio.editarEncabezado('https://backendportfolio-mdw1.onrender.com/editar/persona/' + id, {
 
       "id": this.miPorfolio.id,
       "name": this.miPorfolio.name,
@@ -170,7 +170,7 @@ export class EncabezadoComponent {
   }
 
   editarRed(urlred: string) {
-    this.datosPorfolio.editarRed('http://localhost:8080/editar/red/' + this.idRed, {
+    this.datosPorfolio.editarRed('https://backendportfolio-mdw1.onrender.com/editar/red/' + this.idRed, {
 
       "id": this.idRed,
       "tipoRed": this.tipoRed,

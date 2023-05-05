@@ -13,7 +13,7 @@ export class PortfolioService {
 
   obtenerDatos(): Observable<any> {
     /* console.log("elservicio funciona"); */
-    return this.http.get('http://localhost:8080/ver/personas');
+    return this.http.get('https://backendportfolio-mdw1.onrender.com/ver/personas');
 
   }
 

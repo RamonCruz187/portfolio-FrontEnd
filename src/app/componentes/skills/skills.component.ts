@@ -30,7 +30,7 @@ export class SkillsComponent {
 
   enviarHabilidad() {
     this.datosPorfolio
-      .nuevaHabilidad('http://localhost:8080/new/tecnologia', {
+      .nuevaHabilidad('https://backendportfolio-mdw1.onrender.com/new/tecnologia', {
         "id": "",
         "name": this.name,
         "progress": this.progress,
@@ -47,7 +47,7 @@ export class SkillsComponent {
 
   editarHabilidad(id: any) {
     this.datosPorfolio
-      .editarHabilidad('http://localhost:8080/editar/tecnologia/' + id, {
+      .editarHabilidad('https://backendportfolio-mdw1.onrender.com/editar/tecnologia/' + id, {
 
         "id": this.inputId,
         "name": this.name,
@@ -64,7 +64,7 @@ export class SkillsComponent {
   }
 
   borrarHabilidad(id: any) {
-    this.datosPorfolio.borrarHabilidad('http://localhost:8080/borrar_tecnologia/' + id, {})
+    this.datosPorfolio.borrarHabilidad('https://backendportfolio-mdw1.onrender.com/borrar_tecnologia/' + id, {})
       .subscribe(respuesta => {
         console.log("Tecnologia borrada!")
       });
