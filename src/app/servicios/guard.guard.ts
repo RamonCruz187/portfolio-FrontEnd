@@ -16,12 +16,10 @@ export class GuardGuard implements CanActivate {
       
       return true;
     }else{
-      this.rutas.navigate(['/iniciar-sesion']);
+      this.rutas.navigate(['']);
       return false;
     }
 
-    /* return true; */
-    
   }
   
 }

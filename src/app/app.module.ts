@@ -13,14 +13,10 @@ import {  HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormBuilder, FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
 import { interceptorProvider } from './servicios/interceptor.service';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 
-const appRoutes: Routes = [
-  {path: '', component: AppComponent},
-  {path: 'proyectos', component: ProyectosComponent}
-];
+const appRoutes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -31,7 +27,6 @@ const appRoutes: Routes = [
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    IniciarSesionComponent,
     PortfolioComponent
   ],
   imports: [
