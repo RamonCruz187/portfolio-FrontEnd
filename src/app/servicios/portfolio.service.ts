@@ -13,7 +13,7 @@ export class PortfolioService {
 
   obtenerDatos(): Observable<any> {
     /* console.log("elservicio funciona"); */
-    return this.http.get('https://backendportfolio-9azn.onrender.com/ver/personas');
+    return this.http.get('https://back.portfoliorcruz.com/ver/personas');
 
   }
 

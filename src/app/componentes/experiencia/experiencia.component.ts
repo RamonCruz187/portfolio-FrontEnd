@@ -44,7 +44,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   enviarExp() {
-    this.datosPorfolio.nuevaExperiencia('https://backendportfolio-9azn.onrender.com/new/experiencia', {
+    this.datosPorfolio.nuevaExperiencia('https://back.portfoliorcruz.com/new/experiencia', {
       "id": this.formLogin.value.id,
       "position": this.formLogin.value.position,
       "company": this.formLogin.value.company,
@@ -66,7 +66,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   editarExp(id: any) {
-    this.datosPorfolio.editarExperiencia('https://backendportfolio-9azn.onrender.com/editar/experiencia/' + id, {
+    this.datosPorfolio.editarExperiencia('https://back.portfoliorcruz.com/editar/experiencia/' + id, {
       "id": this.inputId,
       "position": this.formLogin.value.position,
       "company": this.formLogin.value.company,
@@ -86,7 +86,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   borrarExp(id: any) {
-    this.datosPorfolio.borrarExperiencia('https://backendportfolio-9azn.onrender.com/borrar_exp/' + id, {})
+    this.datosPorfolio.borrarExperiencia('https://back.portfoliorcruz.com/borrar_exp/' + id, {})
       .subscribe(respuesta => {
         console.log("Experinecia borrada!")
       });

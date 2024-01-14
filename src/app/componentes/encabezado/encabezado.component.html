@@ -1,17 +1,12 @@
 <div class="container-fluid  row barra "> <!-- ------BARRA---------- -->
   <div class="col yo-programo">
-    <a href="https://argentinaprograma.inti.gob.ar/"><img src="../assets/imagenes/arg-prog.png"
-        alt="Argentina Programa"></a>
-    <h3>#Yo programo</h3>
+    
+    
   </div>
   <div class="col" id="iconos">
     <a href="#" *ngIf="isLogged" data-bs-toggle="modal" data-bs-target="#redes"><i
         class="fa-solid fa-pen-to-square fa-sm"></i></a>
-    <a href={{urlRedGithub}} target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
-    <a href={{urlRedFacebbok}} target="_blank"><i class="fa-brands fa-facebook fa-xl"></i></a>
-    <a href={{urlRedTwitter}} target="_blank"><i class="fa-brands fa-twitter fa-xl"></i></a>
-    <a href={{urlRedInstagram}} target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
-    <a href={{urlRedLinkedin}} target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+    <a href={{urlRedGithub}} target="_blank"><i class="fa-brands fa-github fa-xl"></i></a><a href={{urlRedLinkedin}} target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
     <button type="button" class="btn btn-primary" style="margin-left: 20px;" data-bs-toggle="modal"
       data-bs-target="#login" *ngIf="!isLogged">Login</button>
     <button type="button" class="btn btn-primary" style="margin-left: 20px;" (click)="onLogout()"
@@ -122,8 +117,8 @@
         <h5 class="col">{{miPorfolio.position}}</h5>
       </div>
       <div class="row">
-        <p class="col">{{miPorfolio.ubication}}<a href="" class="primary" data-bs-toggle="modal"
-            data-bs-target="#staticBackdropInfo">Inf. de contacto</a> </p>
+        <p class="col">{{miPorfolio.ubication}}  <a href="" class="primary" data-bs-toggle="modal"
+            data-bs-target="#staticBackdropInfo">   Inf. de contacto</a> </p>
 
         <!-- Modal Info de Contacto-->
         <div class="modal fade" id="staticBackdropInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -148,36 +143,55 @@
 
       </div>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCV">CV</button>
-      <button type="button" class="btn btn-light">Documentos</button>
-      <button type="button" class="btn btn-light"><a href={{urlRedGithub}} target="_blank">GitHub</a></button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDOC">Título</button>
+      
 
     </div>
     <!-- ------LOGO ARGENTINA PROGRAMA -->
-    <div class="col datos2 col-sm-12 col-md-3 col-lg-3 col-xl-3 align-self-center ">
-      <a href="https://argentinaprograma.inti.gob.ar/"><img class="align-self-end img-fluid logoArgentina"
-          src="../assets/imagenes/arg-programa.png" alt=""></a>
-    </div>
+    <div id="sfcb2adwm6zsmlgwebmtn15t8d7axdxf49g">
+      <a href="https://www.contadorvisitasgratis.com" title="contador de visitas para web"><img src="https://counter7.optistats.ovh/private/contadorvisitasgratis.php?c=b2adwm6zsmlgwebmtn15t8d7axdxf49g" border="0" title="contador de visitas para web" alt="contador de visitas para web"></a>
+    </div><script type="text/javascript" src="https://counter7.optistats.ovh/private/counter.js?c=b2adwm6zsmlgwebmtn15t8d7axdxf49g&down=async" async></script><noscript><a href="https://www.contadorvisitasgratis.com" title="contador de visitas para web"><img src="https://counter7.optistats.ovh/private/contadorvisitasgratis.php?c=b2adwm6zsmlgwebmtn15t8d7axdxf49g" border="0" title="contador de visitas para web" alt="contador de visitas para web"></a></noscript>
+
 
     <!-- Modal cv-->
     <div class="modal fade" id="modalCV" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">CV</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <embed src="../assets/data/PDF.pdf" width="450px" height="630px" type="">
+            <embed src="../assets/data/CV.pdf" width="100%" height="100%" type="">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Modal documentos-->
+    <div class="modal fade " id="modalDOC" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Documentos</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ">
+            <embed src="../assets/data/CERT.pdf" width="100%" height="100%" type="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ----------------modal------------------------------ -->
     <div class="modal fade" id="exampleModalToggleEncabezado" aria-hidden="true"
       aria-labelledby="exampleModalToggleLabel" tabindex="-1">

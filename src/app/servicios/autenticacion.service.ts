@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AutenticacionService {
-url= 'https://backendportfolio-9azn.onrender.com/auth/login';
+url= 'https://back.portfoliorcruz.com/auth/login';
 currentUserSubject: BehaviorSubject<any>;
 
   constructor(private http: HttpClient) { 

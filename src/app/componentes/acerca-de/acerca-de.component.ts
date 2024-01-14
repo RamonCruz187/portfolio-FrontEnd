@@ -32,7 +32,7 @@ export class AcercaDeComponent {
 
   editarEncabezado(id: any) {
     this.datosPorfolio
-      .editarEncabezado('https://backendportfolio-9azn.onrender.com/editar/persona/' + id, {
+      .editarEncabezado('https://back.portfoliorcruz.com/editar/persona/' + id, {
         id: this.miPorfolio.id,
         name: this.miPorfolio.name,
         position: this.miPorfolio.position,
