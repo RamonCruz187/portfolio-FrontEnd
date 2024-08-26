@@ -1,108 +1,46 @@
-<div class="proyectos container "> <!-- --------PROYECTOS----------- -->
+<div class="proyectos container">
+  <!-- --------PROYECTOS----------- -->
   <div class="proyectos-row row">
     <div class="title col">
       <div class="titulo">
         <h3>Proyectos</h3>
       </div>
-      <div class="modificar col-sm-1 col-md-1 col-lg-1 col-xl-1"><a *ngIf="isLogged" href="#" data-bs-toggle="modal"
-          data-bs-target="#nuevoProyecto"><i class="fa-solid fa-plus"></i></a></div>
-
-      <!-- Modal -->
-      <div class="modal fade" id="nuevoProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Nuevo Proyecto</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form [formGroup]="formProyecto">
-
-                Título: <input type="text" formControlName="nombre"><br>
-                Descripción: <br>
-                <textarea name="" id="" cols="50" rows="7" formControlName="descripcion"></textarea><br>
-                Url: <input type="text" formControlName="urlProyecto"><br>
-              
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" (click)="enviarProyecto()">Enviar</button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <ul class="items-list">
-      <li *ngFor="let proyecto of proyectoList">
-        <div class="proyectos-contenido col">
-          <div class="proyectos-contenido-row row">
-            <div class="proyectos-item col">
-              <h3>{{proyecto.nombre}}</h3>
-              <p>{{proyecto.descripcion}}</p>
-              <p>Url: <a href={{proyecto.urlProyecto}}>{{proyecto.urlProyecto}}</a></p>
-            </div>
-            <div class="proyectos-editar col-sm-1 col-md-1 col-lg-1 col-xl-1">
-              <a *ngIf="isLogged" href="#" data-bs-toggle="modal" [attr.data-bs-target]="'#proyecto'+proyecto.id"
-                (click)="ponerid(proyecto.id)"><i class="fa-solid fa-pen-to-square"></i></a>
-              <a *ngIf="isLogged" (click)="borrarProyecto(proyecto.id)" data-bs-toggle="modal"
-                data-bs-target="#borrarProyecto" href="#"><i class="fa-solid fa-trash"></i></a>
-
-              <!-- Modal borrar -->
-              <div class="modal fade" id="borrarProyecto" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmación</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        (click)="recargar()"></button>
-                    </div>
-                    <div class="modal-body">
-                      Proyecto eliminado con éxito.
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                        (click)="recargar()">Cerrar</button>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Modal Edicion -->
-              <div class="modal fade" [id]='"proyecto"+proyecto.id' data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar {{proyecto.nombre}}</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                      <form [formGroup]="formProyecto">
-                        Título: <input type="text" formControlName="nombre" size="40" ><br>
-                        Descripción: <br> 
-                        <textarea name="" id="" cols="50" rows="7" formControlName="descripcion"></textarea><br>
-                        Url: <input type="text" formControlName="urlProyecto" size="40"><br>
-                      </form>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary"
-                        (click)="editarProyecto(proyecto.id)">Actualizar</button>
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Termina Modal Edicion -->
-            </div>
+      <div class="proyectos-contenido col">
+        <div class="proyectos-contenido-row row">
+          <div class="proyectos-item col">
+            <h3>Proyecto Ninja</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+              voluptate alias assumenda similique ipsa porro saepe
+              exercitationem maxime, repellendus consectetur nulla adipisci
+              aspernatur minima perferendis, cumque, sequi quos dolor fugit!
+            </p>
+            <p>Url: <a href="www.google.com">Proyecto X</a></p>
           </div>
         </div>
-      </li>
+      </div>
+    </ul>
+
+
+    
+    <ul class="items-list">
+      <div class="proyectos-contenido col">
+        <div class="proyectos-contenido-row row">
+          <div class="proyectos-item col">
+            <h3>Proyecto Ninja</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
+              voluptate alias assumenda similique ipsa porro saepe
+              exercitationem maxime, repellendus consectetur nulla adipisci
+              aspernatur minima perferendis, cumque, sequi quos dolor fugit!
+            </p>
+            <p>Url: <a href="www.google.com">Proyecto X</a></p>
+          </div>
+        </div>
+      </div>
     </ul>
   </div>
 </div>

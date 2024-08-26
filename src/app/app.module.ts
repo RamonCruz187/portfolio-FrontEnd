@@ -13,7 +13,6 @@ import {  HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormBuilder, FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { interceptorProvider } from './servicios/interceptor.service';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 
 const appRoutes: Routes = [];
@@ -38,7 +37,7 @@ const appRoutes: Routes = [];
     RouterModule.forRoot(appRoutes)
     
   ],
-  providers: [PortfolioService, interceptorProvider
+  providers: [PortfolioService,
     
   ],
   bootstrap: [AppComponent]
